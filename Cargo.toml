@@ -1,0 +1,34 @@
+[workspace]
+members = [
+    "app",
+    "common",
+    "generic/migration",
+    "generic/db",
+    "generic/peer",
+    "generic/consumer"
+]
+
+resolver = "2"
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+refinery = { version = "0.8", features = ["tokio-postgres"] }
+tokio-postgres = { version = "0.7", features = ["with-chrono-0_4"] }
+deadpool-postgres = "0.14"
+once_cell = "1.8"
+futures = "0.3.31"
+openssl = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.9.0"
+blake3 = "1.8.0"
+chrono = { version = "0.4", features = ["serde"] }
+async-nats = "0.41"
+tower-http = { version = "0.6", features = ["cors"] }
+base64 = "0.22"
+axum = "0.8"
+axum-server = "0.7.2"
+http = "1.3.1"
+config = "0.15.9"
+rustls = "0.23"
+reqwest = "0.12"

@@ -1,0 +1,12 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = {workspace = true}
+config = {workspace = true}
+tokio = { workspace = true }
+once_cell = {workspace = true}
+chrono = {workspace = true}
+

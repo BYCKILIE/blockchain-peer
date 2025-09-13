@@ -1,0 +1,87 @@
+services:
+  blockchain-db:
+    container_name: blockchain-db
+    image: timescale/timescaledb:latest-pg17
+    environment:
+      POSTGRES_USER: byke
+      POSTGRES_PASSWORD: byke
+      POSTGRES_DB: BYKE
+    ports:
+      - "5400:5432"
+#    volumes:
+#      - ./blockchain-data-ha:/home/postgres/pgdata/data
+#      - ./blockchain-data:/var/lib/postgresql/data
+
+  blockchain-db1:
+    container_name: blockchain-db1
+    image: timescale/timescaledb:latest-pg17
+    environment:
+      POSTGRES_USER: byke
+      POSTGRES_PASSWORD: byke
+      POSTGRES_DB: BYKE
+    ports:
+      - "5401:5432"
+#    volumes:
+#      - ./blockchain-data-ha:/home/postgres/pgdata/data
+#      - ./blockchain-data:/var/lib/postgresql/data
+
+  blockchain-db2:
+    container_name: blockchain-db2
+    image: timescale/timescaledb:latest-pg17
+    environment:
+      POSTGRES_USER: byke
+      POSTGRES_PASSWORD: byke
+      POSTGRES_DB: BYKE
+    ports:
+      - "5402:5432"
+#    volumes:
+#      - ./blockchain-data-ha:/home/postgres/pgdata/data
+#      - ./blockchain-data:/var/lib/postgresql/data
+
+  nats1:
+    image: nats:latest
+    container_name: nats_server1
+    ports:
+      - "4222:4222"
+    volumes:
+      - ./nats-server.conf:/etc/nats/nats-server.conf:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/1.bchportal.net/fullchain.pem:/etc/nats/certs/server-fullchain.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/1.bchportal.net/privkey.pem:/etc/nats/certs/server-privkey.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/1.bchportal.net/chain.pem:/etc/nats/certs/isrgrootx1.pem:ro
+    command:
+      - -m=8222
+      - -c=/etc/nats/nats-server.conf
+
+  nats2:
+    image: nats:latest
+    container_name: nats_server2
+    ports:
+      - "4223:4222"
+    volumes:
+      - ./nats-server.conf:/etc/nats/nats-server.conf:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/2.bchportal.net/fullchain.pem:/etc/nats/certs/server-fullchain.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/2.bchportal.net/privkey.pem:/etc/nats/certs/server-privkey.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/2.bchportal.net/chain.pem:/etc/nats/certs/isrgrootx1.pem:ro
+    command:
+      - -m=8222
+      - -c=/etc/nats/nats-server.conf
+
+  nats3:
+    image: nats:latest
+    container_name: nats_server3
+    ports:
+      - "4224:4222"
+    volumes:
+      - ./nats-server.conf:/etc/nats/nats-server.conf:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/3.bchportal.net/fullchain.pem:/etc/nats/certs/server-fullchain.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/3.bchportal.net/privkey.pem:/etc/nats/certs/server-privkey.pem:ro
+      - /home/tudor/Projects/License/cert/blockchain/selfsigned/nats/3.bchportal.net/chain.pem:/etc/nats/certs/isrgrootx1.pem:ro
+    command:
+      - -m=8222
+      - -c=/etc/nats/nats-server.conf
+
+#volumes:
+#  blockchain-data-ha:
+#    driver: local
+#  blockchain-data:
+#    driver: local

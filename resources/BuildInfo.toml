@@ -1,0 +1,38 @@
+[root]
+word_before = """
+Developed by BCH for a greater horizon of technology
+Dream of Bigger Things
+"""
+logo = """
+        ____  ________  __      ____          __           __       _
+       / __ )/ ____/ / / /     /  _/___  ____/ /_  _______/ /______(_)__  _____
+      / __  / /   / /_/ /_____ / // __ \\/ __  / / / / ___/ __/ ___/ / _ \\/ ___/
+     / /_/ / /___/ __  /_____// // / / / /_/ / /_/ (__  ) /_/ /  / /  __(__  )
+    /_____/\\____/_/ /_/     /___/_/ /_/\\__,_/\\__,_/____/\\__/_/  /_/\\___/____/
+
+"""
+details = """
+Web Technologies Developer
+Contact:
+    Email: tudorovidiub@gmail.com
+    GitHub: BYCKILIE
+"""
+
+[app]
+word_before = """
+Presenting the new ultra immutable memory concept:
+"""
+logo = """
+        ____  ________  __      ____
+       / __ )/ ____/ / / /     / __ \\___  ___  _____
+      / __  / /   / /_/ /_____/ /_/ / _ \\/ _ \\/ ___/
+     / /_/ / /___/ __  /_____/ ____/  __/  __/ /
+    /_____/\\____/_/ /_/     /_/    \\___/\\___/_/
+
+"""
+details = """
+This app intends to pioneer a new approach to the existing blockchain systems.
+Decentralized - Fast Throughput - Ultra Immutable
+
+All rights reserved.
+"""

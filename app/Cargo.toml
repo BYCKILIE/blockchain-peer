@@ -1,0 +1,17 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "app"
+path = "src/main.rs"
+
+[dependencies]
+tokio = {workspace = true}
+futures = {workspace = true}
+
+peer = {path = "../generic/peer" }
+consumer = {path = "../generic/consumer" }
+db = {path = "../generic/db"}
+common = {path = "../common"}

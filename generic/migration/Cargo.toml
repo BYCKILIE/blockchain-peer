@@ -1,0 +1,15 @@
+[package]
+name = "migration"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "migration"
+path = "src/main.rs"
+
+[dependencies]
+refinery = { workspace = true }
+tokio = { workspace = true }
+tokio-postgres = { workspace = true }
+
+common = {path = "../../common"}
